@@ -9,7 +9,7 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r}
+```{r question 1}
 library(tidyverse)
 
 #QUESTION 1#
@@ -36,7 +36,7 @@ mean(pull(hw1_cq,vec_factor))
 #WE CAN ONLY TAKE THE MEAN OF NUMERICAL AND LOGICAL ARGUMENTS. WHEN TRYING TO TAKE THE MEAN FOR THE CHARACTER AND FACTOR ARGUMENTS IT WAS NOT POSSIBLE.#
 
 ```
-```{r eval = FALSE}
+```{r question 1.2, eval = FALSE}
 
 #CONVERT LOGICAL, FACTOR AND CHARACTER VECTORS TO NUMERIC#
 
@@ -49,7 +49,7 @@ as.numeric(pull(hw1_cq,vec_factor))
 #LOGICAL AND FACTOR VECTORS WERE ABLE TO CONVERT DATA TO NUMERIC, BUT CHARACTER VECTOR INTRODUCES A VECTOR OF NA VALUES OF THE SAME LENGHT, THAT IS, IT IS NOT ABLE TO PROPERLY CONVERT THE CHARACTER VECTOR TO NUMERIC. IT HELPS TO UNDERSTAND WHY YOU CANNOT TAKE THE MEAN OF THE CHARACTER VECTOR: BECAUSE IT IS NOT ABLE TO READ THE VECTOR VALUES AS NUMERIC VALUES IN ORDER TO TAKE THE MEAN#
 
 ```
-```{r eval = FALSE}
+```{r question 1.3, eval = FALSE}
 
 #CONVERT LOGICAL VECTOR TO NUMERIC AND MULTIPLY SAMPLE BY RESULT#
 
@@ -65,7 +65,7 @@ as.factor(pull(hw1_cq,vec_logical))
 as.numeric(pull(hw1_cq,vec_logical))*(pull(hw1_cq,norm_samp))
 
 ``` 
-```{r}
+```{r question 2}
 
 #Question 2#
 
@@ -78,4 +78,20 @@ hw1_cq2 = tibble(
   vec_numeric = as.numeric(vec_logic),
   vec_fact = as.factor(vec_logic),
 )
+
+#DESCRIPTION OF VECTOR#
+
+nrow(hw1_cq2)
+ncol(hw1_cq2)
+
+mean(pull(hw1_cq2,x))
+median(pull(hw1_cq2,x))
+sd(pull(hw1_cq2,x))
+
+count(hw1_cq2, vars = vec_logic, wt_var = TRUE)
+
+
+#THERE ARE 500 ROWS AND 5 COLUMNS ON THE HW1_CQ2 DATASET. THE MEAN OF X = -0.03676678, THE MEDIAN OF X = -0.03698192, AND THE STARDARD DEVIATION OF X = 1.08351. THERE ARE 122 CASES FOR WHICH X + Y > 1.
+
 ```
+

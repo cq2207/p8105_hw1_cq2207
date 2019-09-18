@@ -79,19 +79,12 @@ hw1_cq2 = tibble(
   vec_fact = as.factor(vec_logic),
 )
 
-#DESCRIPTION OF VECTOR#
-
-nrow(hw1_cq2)
-ncol(hw1_cq2)
-
-mean(pull(hw1_cq2,x))
-median(pull(hw1_cq2,x))
-sd(pull(hw1_cq2,x))
-
-count(hw1_cq2, vars = vec_logic, wt_var = TRUE)
-
-
 ```
+
+the dataframe `hw1_cq2` has `r nrow(hw1_cq2)` rows and `r ncol(hw1_cq2)` columns
+the mean of x is `r mean(pull(hw1_cq2,x))`,
+the median is `r median(pull(hw1_cq2,x))`, and the standard deviation is `r sd(pull(hw1_cq2,x))`
+the proportion of cases for which x + y > 1 is `r mean(pull(hw1_cq2, vec_logic))` 
 
 ```{r yx_scatter}
 p1 <- ggplot(hw1_cq2, aes(x = x, y = y, color= vec_logic)) + geom_point()

@@ -1,0 +1,10 @@
+---
+title: "hw1_cq2207"
+author: "Carolina Q Cardoso"
+date: "9/18/2019"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```

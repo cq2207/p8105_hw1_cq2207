@@ -12,6 +12,8 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 library(tidyverse)
 
+#QUESTION 1#
+
 set.seed(1)
 
 hw1_cq = tibble(
@@ -63,3 +65,17 @@ as.factor(pull(hw1_cq,vec_logical))
 as.numeric(pull(hw1_cq,vec_logical))*(pull(hw1_cq,norm_samp))
 
 ``` 
+```{r}
+
+#Question 2#
+
+set.seed(29)
+
+hw1_cq2 = tibble(
+  x = rnorm(500),
+  y = rnorm(500),
+  vec_logic = x + y > 1,
+  vec_numeric = as.numeric(vec_logic),
+  vec_fact = as.factor(vec_logic),
+)
+```

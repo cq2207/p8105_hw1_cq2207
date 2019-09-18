@@ -8,3 +8,15 @@ output: github_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+```{r}
+library(tidyverse)
+
+hw1_cq = tibble(
+  norm_samp = rnorm(8),
+  vec_logical = norm_samp > 0,
+  vec_char = c("Mary","Jack","Jill","Jai","John","Jeff","Joe","Jose"),
+  vec_factor = factor(c("EPI","BIOSTATS","BIOSTATS","POPFAM","EPI","EPI","POPFAM","EPI"))
+)
+
+```
